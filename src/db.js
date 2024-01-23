@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
 
+const { ENDPOINT, NAME_DB } = process.env
+
 export const connectDB = async () => {
     try {
-        await mongoose.connect('mongodb://127.0.0.1:27017/chat-app')
+        await mongoose.connect(`mongodb://${ENDPOINT}/${NAME_DB}`)
         console.log("DB is connected");
     } catch (error) {
         console.log(error);

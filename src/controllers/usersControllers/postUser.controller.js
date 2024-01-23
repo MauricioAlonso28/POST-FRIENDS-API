@@ -7,11 +7,11 @@
 
 import User from '../../models/user.model.js'
 
-const postUser = async ({firstName, lastName, username, age, email, image, city, country, description, password}) => {
+const postUser = async ({ firstName, lastName, username, age, email, image, city, country, description, password }) => {
     const usernameExisting = await User.findOne({ username })
     const emailExisting = await User.findOne({ email })
 
-    if (usernameExisting) throw new Error("This username already exists.") 
+    if (usernameExisting) throw new Error("This username already exists.")
     if (emailExisting) throw new Error("This email is already used");
 
     const newUser = new User({

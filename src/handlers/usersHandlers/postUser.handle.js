@@ -4,11 +4,17 @@
     * @returns {Promise<Object>} - Resolves with the newly created user object.
     * @throws {Error} - If the provided username or email already exists.
 */
+import dotenv from 'dotenv'
 
+dotenv.configDotenv()
+
+import { sendMail, createTransporter } from "../../emails/sendMail.js";
 import postUser from "../../controllers/usersControllers/postUser.controller.js";
 import bcrypt from 'bcryptjs'
 import createAccessToken from "../../libs/jwt.js";
-import sendRegisterEmail from "../../emails/schemas/register.noti.js";
+import mailOptionsRegister from "../../emails/schemas/register.noti.js";
+
+const { NODE_MAILER_USER, NODE_MAILER_PASSWORD } = process.env
 
 const postUserHandle = async (req, res) => {
     const { firstName, lastName, username, age, email, image, city, country, description, password } = req.body
@@ -30,10 +36,9 @@ const postUserHandle = async (req, res) => {
 
         res.cookie('token', token)
 
-        sendRegisterEmail(email, username)
+        await sendMail(createTransporter(NODE_MAILER_USER, NODE_MAILER_PASSWORD), mailOptionsRegister(username, email))
 
         return res.status(201).json(newUser)
-
     } catch (error) {
         return res.status(500).json({ message: "Internal Server Error: " + error.message })
     }
