@@ -1,3 +1,5 @@
+// Config dotenv
+
 import dotenv from 'dotenv'
 
 dotenv.configDotenv()
