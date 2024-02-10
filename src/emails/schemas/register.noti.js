@@ -1,15 +1,24 @@
 const { NODE_MAILER_USER } = process.env
 
+/**
+    * Function to generate email options for successful user registration.
+    * 
+    * @param {string} username - Username of the registered user.
+    * @param {string} email - Email address of the registered user.
+    * 
+    * @returns {object} - Returns email options including sender, recipient, subject, and HTML content.
+*/
+
 const mailOptionsRegister = (username, email) => {
     const mailOptions = {
         from: `CloseFriends <${NODE_MAILER_USER}>`,
         to: [`${email}`],
-        subject: 'Registro de usuario éxitoso',
+        subject: 'Successful user registration',
         html: `
-            <p> Bienvenido ${username},</p>
+            <p>  Welcome ${username},</p>
             
             <p>
-                Ahora que tu registro se ha realizado con éxito puedes disfrutar de esta aplicación, conocer amigos de todo el mundo y realizar posts de tus momentos preferidos.
+                Now that your registration has been successfully completed, you can enjoy this application, meet friends from around the world, and create posts of your favorite moments.
             </p>
 
 

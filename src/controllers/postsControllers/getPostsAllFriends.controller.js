@@ -1,6 +1,14 @@
 import User from '../../models/user.model.js'
 import Post from '../../models/post.model.js'
 
+/**
+    * Function to retrieve and format posts from all friends of a user.
+    * 
+    * @param {string} id - User's ID for whom to fetch posts from friends.
+    * @returns {Promise<Array>} - Returns an array of formatted posts from all friends in descending order by creation date.
+    * @throws {Error} - Throws an error if there are no posts to show.
+*/
+
 const getPostsAllFriends = async (id) => {
     const user = await User.findById(id).select('friends')
     const idFriends = [...user.friends]

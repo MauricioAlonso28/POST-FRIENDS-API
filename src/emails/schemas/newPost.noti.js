@@ -1,25 +1,36 @@
 const { NODE_MAILER_USER } = process.env
 
+/**
+    * Function to generate email options when publishing a new post.
+    * 
+    * @param {object} post - Details of the newly published post.
+    * @param {object} user - Information of the user who made the post.
+    * 
+    * @returns {object} - Returns email options including sender, recipient, subject, and HTML content.
+*/
+
 const mailOptionsNewPost = (post, user) => {
     const { email, username } = user
 
     const mailOptions = {
         from: `CloseFriends <${NODE_MAILER_USER}>`,
         to: [`${email}`],
-        subject: 'Post publicado éxitosamente',
+        subject: 'Post successfully published',
         html: `
-            <p>${username} tu post ha sido publicado con éxito,</p>
+            <p>${username}, your post has been successfully published,</p>
 
             <div>
-                <b>Detalles del post: </b>
+                <b>Post details: </b>
                 
                 <p>${post.message}</p>
             </div>
 
-            <p>Espero te sigas animando a postear más momentos importantes de tu vida para compartir con amigos.</p>
+            <p>
+                We hope you continue to share more important moments of your life with friends.
+            </p>
 
 
-            <small>Pronto se habilitarán las reacciones y comentarios a los Posts</small>
+            <small>Reactions and comments on posts will be enabled soon.</small>
             <br/>
             <small>CloseFriends © 2024</small>
         `

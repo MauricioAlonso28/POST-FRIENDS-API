@@ -2,6 +2,14 @@ import { TOKEN_SECRET } from "../config.js";
 import jwt from "jsonwebtoken";
 import User from '../models/user.model.js';
 
+/**
+    * Middleware function for admin authentication.
+    * 
+    * @param {object} req - Express request object.
+    * @param {object} res - Express response object.
+    * @param {function} next - Express next middleware function.
+*/
+
 const adminAuth = async(req, res, next) => {
     const { token } = req.cookies
     

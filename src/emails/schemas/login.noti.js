@@ -1,15 +1,24 @@
 const { NODE_MAILER_USER } = process.env
 
+/**
+    * Function to generate email options for notifying about a successful login.
+    * 
+    * @param {string} username - Username of the logged-in user.
+    * @param {string} email - Email address of the logged-in user.
+    * 
+    * @returns {object} - Returns the email options including sender, recipient, subject, and HTML content.
+*/
+
 const mailOptionsLogin = (username, email) => {
     const mailOptions = {
         from: `CloseFriends <${NODE_MAILER_USER}>`,
         to: [`${email}`],
-        subject: 'Inicio de sesión exitoso',
+        subject: 'Successful login',
         html: `
-            <p> Bienvenido nuevamente ${username}</p>
+            <p> Welcome back, ${username}</p>
             
             <p>
-                Nos alegra verte nuevamente, esperamos sigas disfrutando de las funcionalidades que te brinda CloseFriends.
+                We're glad to see you again, and we hope you continue to enjoy the features that CloseFriends provides.
             </p>
 
 

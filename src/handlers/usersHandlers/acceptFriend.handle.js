@@ -1,5 +1,12 @@
 import acceptFriend from "../../controllers/usersControllers/acceptFriend.controller.js";
 
+/**
+    * Handler function to accept a friend request.
+    * 
+    * @param {object} req - Express request object.
+    * @param {object} res - Express response object.
+*/
+
 const acceptFriendHandle = async(req, res) => {
     const { id } = req.user;
     const { userId } = req.body;

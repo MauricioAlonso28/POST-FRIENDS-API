@@ -1,5 +1,12 @@
 import getAllfriends from "../../controllers/usersControllers/getAllFriends.controller.js";
 
+/**
+    * Handler function to get the list of all friends.
+    * 
+    * @param {object} req - Express request object.
+    * @param {object} res - Express response object.
+*/
+
 const getAllFriendsHandle = async(req, res) => {
     const user = req.user
     const { id } = req.params; 

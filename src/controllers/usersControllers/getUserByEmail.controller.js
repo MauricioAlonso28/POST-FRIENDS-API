@@ -1,3 +1,5 @@
+import User from "../../models/user.model.js";
+
 /**
     * Fetches users by email.
     * @param {Object} options - Search options.
@@ -5,8 +7,6 @@
     * @returns {Promise<Array>} - An array of found users.
     * @throws {Error} - Throws an error if no users are found.
 */
-
-import User from "../../models/user.model.js";
 
 const getUserByEmail = async({ email }) => {
     let usersFound;

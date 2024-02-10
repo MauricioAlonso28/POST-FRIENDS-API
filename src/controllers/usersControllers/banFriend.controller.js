@@ -1,5 +1,17 @@
 import User from '../../models/user.model.js';
 
+/**
+    * Function to ban a friend, removing them from the user's friend list and blocking further interactions.
+    * 
+    * @param {string} id - ID of the user performing the action.
+    * @param {string} userId - ID of the user to be banned.
+    * 
+    * @returns {Promise<object>} - Returns the updated user after banning the specified friend.
+    * 
+    * @throws {Error} - Throws an error if the user to be banned or the performing user is not found,
+    * if the performing user attempts to ban themselves, or if the user has already been banned.
+*/
+
 const banFriend = async(id, userId) => {
     const userFound = await User.findById(id)
     const userBanned = await User.findById(userId)

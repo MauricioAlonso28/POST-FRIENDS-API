@@ -1,5 +1,17 @@
 import User from '../../models/user.model.js';
 
+/**
+    * Function to retrieve a list of friends for a given user.
+    * 
+    * @param {object} user - The authenticated user making the request.
+    * @param {string} id - ID of the user whose friends are to be retrieved.
+    * 
+    * @returns {Promise<Array>} - Returns an array of friends with their IDs, usernames, and images.
+    * 
+    * @throws {Error} - Throws an error if the user to retrieve friends for, or the authenticated user, is not found,
+    * if the authenticated user is not logged in, or if the authenticated user doesn't have access to see this friend list.
+*/
+
 const getAllfriends = async(user, id) => {
     const userFound = await User.findById(id)
     const authUser = await User.findById(user.id)

@@ -1,6 +1,19 @@
 import User from '../../models/user.model.js';
 import Post from '../../models/post.model.js';
 
+/**
+    * Function to retrieve and format posts by user ID.
+    * 
+    * @param {object} user - Object representing the requesting user.
+    * @param {string} user.id - ID of the requesting user.
+    * @param {string} userId - ID of the user whose posts are being retrieved.
+    * 
+    * @returns {Promise<Array>} - Returns an array of formatted posts by the specified user in descending order by creation date.
+    * 
+    * @throws {Error} - Throws an error if the specified user is not found, if the requesting user is not friends with the specified user,
+    *                  or if there are no posts to show.
+*/
+
 const getPostsById = async({user, userId}) => {
     const userFoundAsk = await User.findById(user.id)
     const userFoundGive = await User.findById(userId)

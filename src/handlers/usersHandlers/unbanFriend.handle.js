@@ -1,5 +1,12 @@
 import unbanFriend from "../../controllers/usersControllers/unbanFriend.controller.js";
 
+/**
+    * Handler function to unban a friend.
+    * 
+    * @param {object} req - Express request object.
+    * @param {object} res - Express response object.
+*/
+
 const unbanFriendHandle = async(req, res) => {
     const { id } = req.user;
     const { userId } = req.body;

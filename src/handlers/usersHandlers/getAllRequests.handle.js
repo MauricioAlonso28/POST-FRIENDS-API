@@ -1,5 +1,12 @@
 import getAllRequests from "../../controllers/usersControllers/getAllRequests.controller.js";
 
+/**
+    * Handler function to get the list of all friend requests.
+    * 
+    * @param {object} req - Express request object.
+    * @param {object} res - Express response object.
+*/
+
 const getAllRequestsHandle = async(req, res) => {
     const user = req.user
     const { id } = req.params; 

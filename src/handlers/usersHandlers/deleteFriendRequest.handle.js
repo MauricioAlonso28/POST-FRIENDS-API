@@ -1,5 +1,12 @@
 import deleteFriendRequest from "../../controllers/usersControllers/deleteFriendRequest.controller.js";
 
+/**
+    * Handler function to delete a friend request.
+    * 
+    * @param {object} req - Express request object.
+    * @param {object} res - Express response object.
+*/
+
 const deleteFriendRequestHandle = async(req, res) => {
     const { id } = req.user;
     const { userId } = req.body;

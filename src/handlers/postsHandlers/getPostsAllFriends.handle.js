@@ -1,5 +1,12 @@
 import getPostsAllFriends from "../../controllers/postsControllers/getPostsAllFriends.controller.js";
 
+/**
+    * Handler function to get posts from all friends for a specific user.
+    * 
+    * @param {object} req - Express request object.
+    * @param {object} res - Express response object.
+*/
+
 const getPostsAllFriendsHandle = async(req,res) => {
     const { id } = req.user
 

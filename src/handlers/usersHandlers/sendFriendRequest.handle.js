@@ -1,5 +1,12 @@
 import sendFriendRequest from "../../controllers/usersControllers/sendFriendRequest.controller.js";
 
+/**
+    * Handler function to send a friend request.
+    * 
+    * @param {object} req - Express request object.
+    * @param {object} res - Express response object.
+*/
+
 const sendFriendRequestHandle = async(req, res) => {
     const { id } = req.params;
     const user = req.user;

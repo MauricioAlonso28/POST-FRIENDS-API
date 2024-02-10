@@ -1,3 +1,11 @@
+import dotenv from 'dotenv'
+
+dotenv.configDotenv()
+
+import banUser from "../../controllers/usersControllers/banUser.controller.js";
+import { sendMail, createTransporter } from "../../emails/sendMail.js";
+import mailOptionsUserBanned from "../../emails/schemas/banUser.noti.js";
+
 /**
     * Handles HTTP requests to ban a user by updating the 'banned' property.
     *
@@ -6,13 +14,6 @@
     * @param {Object} res - HTTP response object.
     * @returns {Object} - JSON response with the operation result.
 */
-import dotenv from 'dotenv'
-
-dotenv.configDotenv()
-
-import banUser from "../../controllers/usersControllers/banUser.controller.js";
-import { sendMail, createTransporter } from "../../emails/sendMail.js";
-import mailOptionsUserBanned from "../../emails/schemas/banUser.noti.js";
 
 const { NODE_MAILER_USER, NODE_MAILER_PASSWORD } = process.env
 

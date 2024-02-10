@@ -1,9 +1,3 @@
-/**
-    * Handles user login, validates credentials, and generates an access token.
-    * @param {Object} req - Express request object.
-    * @param {Object} res - Express response object.
-    * @returns {Promise<void>} - Resolves after handling the login process.
-*/
 import dotenv from 'dotenv'
 
 dotenv.configDotenv()
@@ -12,6 +6,13 @@ import loginUser from '../../controllers/authControllers/loginUser.controller.js
 import { createTransporter, sendMail } from '../../emails/sendMail.js';
 import createAccessToken from '../../libs/jwt.js';
 import mailOptionsLogin from '../../emails/schemas/login.noti.js';
+
+/**
+    * Handles user login, validates credentials, and generates an access token.
+    * @param {Object} req - Express request object.
+    * @param {Object} res - Express response object.
+    * @returns {Promise<void>} - Resolves after handling the login process.
+*/
 
 const { NODE_MAILER_USER, NODE_MAILER_PASSWORD } = process.env
 

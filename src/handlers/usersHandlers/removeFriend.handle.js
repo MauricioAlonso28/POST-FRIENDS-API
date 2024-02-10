@@ -1,5 +1,12 @@
 import removeFriend from "../../controllers/usersControllers/removeFriend.controller.js";
 
+/**
+    * Handler function to remove a friend.
+    * 
+    * @param {object} req - Express request object.
+    * @param {object} res - Express response object.
+*/
+
 const removeFriendHandle = async(req, res) => {
     const { id } = req.user
     const { userId } = req.body

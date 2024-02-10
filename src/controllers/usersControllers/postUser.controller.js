@@ -1,11 +1,11 @@
+import User from '../../models/user.model.js'
+
 /**
     * Manages user registration, hashes the password, and creates an access token.
     * @param {Object} req - Express request object.
     * @param {Object} res - Express response object.
     * @returns {Promise<void>} - Resolves after handling the registration process.
 */
-
-import User from '../../models/user.model.js'
 
 const postUser = async ({ firstName, lastName, username, age, email, image, city, country, description, password }) => {
     const usernameExisting = await User.findOne({ username })

@@ -1,5 +1,12 @@
 import getPostsById	 from "../../controllers/postsControllers/getPostsById.controller.js";
 
+/**
+    * Handler function to get posts by user ID.
+    * 
+    * @param {object} req - Express request object.
+    * @param {object} res - Express response object.
+*/
+
 const getPostsByIdHandle = async(req, res) => {
     const user = req.user;
     const { userId } = req.body;

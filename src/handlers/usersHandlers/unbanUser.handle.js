@@ -1,13 +1,5 @@
 import unbanUser from "../../controllers/usersControllers/unbanUser.controller.js";
 
-/**
-    * Handles HTTP requests to unban a user by updating the 'banned' property.
-    *
-    * @async
-    * @param {Object} req - HTTP request object.
-    * @param {Object} res - HTTP response object.
-    * @returns {Object} - JSON response with the operation result.
-*/
 import dotenv from 'dotenv'
 
 dotenv.configDotenv()
@@ -16,6 +8,15 @@ import { sendMail, createTransporter } from "../../emails/sendMail.js";
 import mailOptionsUserUnban from "../../emails/schemas/unbanUser.noti.js";
 
 const { NODE_MAILER_USER, NODE_MAILER_PASSWORD } = process.env
+
+/**
+    * Handles HTTP requests to unban a user by updating the 'banned' property.
+    *
+    * @async
+    * @param {Object} req - HTTP request object.
+    * @param {Object} res - HTTP response object.
+    * @returns {Object} - JSON response with the operation result.
+*/
 
 const unbanUserHandle = async (req, res) => {
     const { id } = req.params;

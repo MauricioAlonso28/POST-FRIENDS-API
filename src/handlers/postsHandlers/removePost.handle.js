@@ -1,5 +1,12 @@
 import removePost from "../../controllers/postsControllers/removePost.controller.js"
 
+/**
+    * Handler function to remove a post.
+    * 
+    * @param {object} req - Express request object.
+    * @param {object} res - Express response object.
+*/
+
 const removePostHandle = async (req, res) => {
     const { id } = req.user
     const { postId } = req.body

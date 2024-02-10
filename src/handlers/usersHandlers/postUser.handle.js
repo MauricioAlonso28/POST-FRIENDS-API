@@ -1,9 +1,3 @@
-/**
-    * Handles user registration by saving user information to the database.
-    * @param {Object} userData - User data including first name, last name, etc.
-    * @returns {Promise<Object>} - Resolves with the newly created user object.
-    * @throws {Error} - If the provided username or email already exists.
-*/
 import dotenv from 'dotenv'
 
 dotenv.configDotenv()
@@ -13,6 +7,13 @@ import postUser from "../../controllers/usersControllers/postUser.controller.js"
 import bcrypt from 'bcryptjs'
 import createAccessToken from "../../libs/jwt.js";
 import mailOptionsRegister from "../../emails/schemas/register.noti.js";
+
+/**
+    * Handles user registration by saving user information to the database.
+    * @param {Object} userData - User data including first name, last name, etc.
+    * @returns {Promise<Object>} - Resolves with the newly created user object.
+    * @throws {Error} - If the provided username or email already exists.
+*/
 
 const { NODE_MAILER_USER, NODE_MAILER_PASSWORD } = process.env
 

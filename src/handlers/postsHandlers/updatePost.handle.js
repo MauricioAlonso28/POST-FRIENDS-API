@@ -1,5 +1,12 @@
 import updatePost from "../../controllers/postsControllers/updatePost.controller.js"
 
+/**
+    * Handler function to update a post.
+    * 
+    * @param {object} req - Express request object.
+    * @param {object} res - Express response object.
+*/
+
 const updatePostHandle = async (req, res) => {
     const { message } = req.body
     const { id } = req.user

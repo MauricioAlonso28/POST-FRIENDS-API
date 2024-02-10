@@ -1,5 +1,12 @@
 import banFriend from "../../controllers/usersControllers/banFriend.controller.js";
 
+/**
+    * Handler function to ban a friend.
+    * 
+    * @param {object} req - Express request object.
+    * @param {object} res - Express response object.
+*/
+
 const banFriendHandle = async(req, res) => {
     const { id } = req.user
     const { userId } = req.body;

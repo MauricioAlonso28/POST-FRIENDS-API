@@ -7,7 +7,6 @@ import getAllUsers from "../../controllers/usersControllers/getAllUsers.controll
     * @returns {Promise<void>}
 */
 
-
 const getAllUsersHandle = async (req, res) => {
     const { role, status } = req.body
 

@@ -1,11 +1,11 @@
+import getUserByEmail from "../../controllers/usersControllers/getUserByEmail.controller.js";
+
 /**
     * Handles the request to fetch users by email.
     * @param {Object} req - Express request object.
     * @param {Object} res - Express response object.
     * @returns {Promise<void>}
 */
-
-import getUserByEmail from "../../controllers/usersControllers/getUserByEmail.controller.js";
 
 const getUserByEmailHandle = async(req, res) => {
     const { email } = req.body;
