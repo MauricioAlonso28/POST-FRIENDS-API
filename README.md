@@ -1,1 +1,1 @@
-**CloseFriends Api**
+*CLOSEFRIENDS API*
